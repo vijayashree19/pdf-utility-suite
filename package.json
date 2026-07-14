@@ -1,0 +1,25 @@
+{
+  "name": "pdf-utility-suite",
+  "version": "0.1.0",
+  "description": "100% client-side, local-first PDF utility suite (merge, split, reorder) built with pdf-lib.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm run test",
+    "prepare-hooks": "ln -sf ../../scripts/pre-commit.sh .git/hooks/pre-commit"
+  },
+  "keywords": ["pdf", "client-side", "pdf-lib"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
