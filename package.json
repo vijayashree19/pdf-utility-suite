@@ -1,7 +1,7 @@
 {
   "name": "pdf-utility-suite",
   "version": "0.1.0",
-  "description": "100% client-side, local-first PDF utility suite (merge, split, reorder) built with pdf-lib.",
+  "description": "100% client-side, local-first PDF utility suite (merge, split, reorder, lossless compression) built with pdf-lib.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -15,10 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "fflate": "^0.8.3",
+    "pngjs": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
+    "@types/pngjs": "^6.0.5",
+    "jpeg-js": "^0.4.4",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10"
   }
