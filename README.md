@@ -11,6 +11,16 @@ A 100% client-side, local-first PDF (and file) utility suite. All operations hap
 
 Every operation validates its input and raises a typed error (`InvalidPdfError`, `PasswordRequiredError`, `InvalidPageRangeError`, `EmptyInputError`) so calling UI code can branch on the failure mode — e.g. prompting for a password — instead of crashing.
 
+## Live demo
+
+`demo/index.html` is a single self-contained HTML file — no build step, no server — with a UI for every operation above (Merge / Split / Keep pages / Compress). Open it directly in a browser:
+
+```bash
+open demo/index.html   # or just double-click it, or drag it into a browser tab
+```
+
+It embeds `pdf-lib` and `fflate` inline so it works fully offline. PDF, JPEG, zip/Office, and generic-file compression call the exact same logic as `src/compressionService.ts`; PNG compression uses the browser's own canvas encoder instead of the repo's Node-based `pngjs` path (see the note in the demo's footer). To publish it as a shareable link, serve `demo/index.html` as a static site (GitHub Pages, Netlify, Vercel, etc.) — it has no server-side dependencies.
+
 ## Compression
 
 `src/compressionService.ts` provides lossless compression for any file type. For formats with a dedicated compressor, the output is a smaller file in the *same* format — directly openable with any normal viewer, with rendered content byte-for-byte identical to the original:
